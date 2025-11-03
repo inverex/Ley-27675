@@ -19,7 +19,7 @@
   }
   *{box-sizing:border-box}
   body{
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
     margin:0;
     background:var(--bg);
     color:#0b2135;
@@ -29,7 +29,7 @@
   }
 
   .wrap{max-width:var(--container);margin:28px auto;padding:20px;}
-  header{display:flex;align-items:center;gap:18px;padding:18px;border-radius:var(--radius);background:linear-gradient(90deg, rgba(11,58,102,0.06), rgba(15,119,195,0.03));}
+  header{display:flex;align-items:center;gap:18px;padding:18px;border-radius:var(--radius);background:linear-gradient(90deg,rgba(11,58,102,0.06),rgba(15,119,195,0.03));}
   .logo{width:86px;height:86px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(11,58,102,0.08);overflow:hidden}
   .logo img{max-width:100%;height:auto;display:block}
   .title h1{margin:0;font-size:20px;color:var(--navy)}
@@ -38,7 +38,6 @@
   .grid{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:20px}
   @media (max-width:900px){.grid{grid-template-columns:1fr;}.logo{width:72px;height:72px}}
 
-  /* Main card */
   .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 8px 20px rgba(11,34,56,0.04);}
 
   .hero{display:flex;gap:18px;align-items:flex-start}
@@ -52,22 +51,18 @@
   .btn-outline{background:transparent;border-color:#d1d5db;color:var(--navy)}
   .btn-ghost{background:transparent;color:var(--navy);border:1px dashed rgba(11,58,102,0.06)}
 
-  /* Aside */
   aside .card{position:sticky;top:20px}
   .points{display:grid;gap:10px;margin-top:8px}
   .point{background:#fff;padding:12px;border-radius:10px;border:1px solid rgba(11,58,102,0.06);font-size:14px}
   .badge{display:inline-block;padding:6px 8px;background:#eef6ff;color:var(--navy);border-radius:6px;font-weight:600;font-size:13px}
 
-  /* FAQ */
   .faq .q{border-top:1px solid #eef2f6;padding:12px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
   .faq .a{padding:8px 0;color:var(--muted);display:none}
   .faq .q.open + .a{display:block}
 
-  /* timeline */
   .timeline{margin-top:12px}
   .timeline li{list-style:none;padding:6px 0;border-left:3px solid rgba(11,58,102,0.06);padding-left:12px;margin-bottom:6px}
 
-  /* small table */
   table{width:100%;border-collapse:collapse;margin-top:8px}
   th,td{padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:left;font-size:14px}
   th{color:var(--muted);font-weight:600}
@@ -75,14 +70,19 @@
   footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
   .footnote{font-size:12px;color:var(--muted);margin-top:10px}
   .link{color:var(--accent);text-decoration:none}
+
+  @media (max-width:768px){
+    .hero{flex-direction:column}
+    .hero>div:last-child{width:100%;margin-top:12px}
+    .hero img{height:auto;max-width:100%;display:block}
+  }
 </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="logo" aria-hidden="true">
-        <!-- REEMPLAZAR: colocar logo institucional; si no hay, dejar este icono -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Argentina_gobierno_logo.svg" alt="Logo (reemplazar)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Argentina_gobierno_logo.svg" alt="Logo del Gobierno de Argentina">
       </div>
       <div class="title">
         <h1>Ley Nacional N° 27.675 — Respuesta integral al VIH, Hepatitis virales, ITS y Tuberculosis (TBC)</h1>
@@ -91,14 +91,13 @@
     </header>
 
     <div class="grid">
-      <!-- CONTENIDO PRINCIPAL -->
       <main>
         <section class="card">
           <div class="hero">
             <div class="summary">
               <h2 style="margin-top:0;color:var(--navy)">Resumen ejecutivo (breve)</h2>
               <p style="color:var(--muted);margin-top:8px">
-                La Ley N° 27.675 establece una <strong>respuesta integral e intersectorial</strong> frente al VIH, las hepatitis virales, otras infecciones de transmisión sexual (ITS) y la tuberculosis (TBC). Declara estas políticas de interés público nacional y garantiza la prevención, el acceso a diagnóstico y tratamiento, la continuidad de la atención y la eliminación del estigma y la discriminación. <!-- fuente oficial -->
+                La Ley N° 27.675 establece una <strong>respuesta integral e intersectorial</strong> frente al VIH, las hepatitis virales, otras infecciones de transmisión sexual (ITS) y la tuberculosis (TBC). Declara estas políticas de interés público nacional y garantiza la prevención, el acceso a diagnóstico y tratamiento, la continuidad de la atención y la eliminación del estigma y la discriminación.
               </p>
 
               <div class="kpi" aria-hidden="true">
@@ -108,24 +107,20 @@
               </div>
 
               <div class="actions">
-                <!-- Enlaces oficiales -->
                 <a class="btn btn-primary" href="https://e-legis-ar.msal.gov.ar/legisalud/migration/pdf/ley27675.pdf" target="_blank" rel="noopener">📄 Leer texto completo (PDF oficial)</a>
                 <a class="btn btn-outline" href="https://www.argentina.gob.ar/normativa/nacional/ley-27675-368130/texto" target="_blank" rel="noopener">🔗 Página normativa oficial</a>
                 <button class="btn btn-ghost" onclick="window.print()">🖨 Imprimir</button>
               </div>
 
-              <p class="footnote">Las referencias y el texto legal citado provienen del sitio de normas del Estado argentino y Boletín Oficial (texto y PDF). Ver enlaces arriba. 4</p>
+              <p class="footnote">Fuentes oficiales: Ministerio de Salud de la Nación y Boletín Oficial de la República Argentina.</p>
             </div>
 
-            <!-- Imagen / ilustración sugerida -->
             <div style="width:260px;">
-              <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Ilustración salud pública" style="width:100%;border-radius:10px;object-fit:cover;height:160px">
-              <p style="font-size:13px;color:var(--muted);margin:8px 0 0">Sugerencia: reemplazar por foto institucional o ilustración en estilo institucional (unDraw / Unsplash).</p>
+              <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Ilustración sobre salud pública" style="width:100%;border-radius:10px;object-fit:cover;height:160px">
             </div>
           </div>
         </section>
 
-        <!-- Puntos principales -->
         <section class="card" style="margin-top:16px;">
           <h3 style="margin-top:0;color:var(--navy)">Puntos principales</h3>
           <div class="points">
@@ -136,35 +131,26 @@
             <div class="point"><strong>Protección contra estigma:</strong> Promueve acciones para eliminar el estigma y la discriminación.</div>
             <div class="point"><strong>Coordinación intersectorial:</strong> Establece mecanismos de trabajo entre niveles de gobierno y sectores para una respuesta integrada.</div>
           </div>
-          <p class="footnote" style="margin-top:12px">Resumen orientativo; para el texto legal completo y artículos puntuales consultar el PDF oficial. 5</p>
         </section>
 
-        <!-- Gráfico SVG ilustrativo -->
         <section class="card" style="margin-top:16px;">
           <h3 style="margin-top:0;color:var(--navy)">Visual (ilustrativo)</h3>
-          <p style="color:var(--muted);margin-top:6px">Distribución ilustrativa de componentes de la respuesta integral (solo visual — no cuantitativa).</p>
-
-          <!-- Gráfico de barras SVG simple -->
+          <p style="color:var(--muted);margin-top:6px">Representación visual de los principales componentes de la respuesta integral (no cuantitativa).</p>
           <div style="padding:6px;background:#fbfdff;border-radius:10px;margin-top:8px">
             <svg viewBox="0 0 600 160" width="100%" height="160" aria-hidden="true">
-              <!-- barras -->
               <rect x="20" y="40" width="440" height="26" rx="8" fill="#e9f4ff"></rect>
               <rect x="20" y="76" width="360" height="26" rx="8" fill="#e9f4ff"></rect>
               <rect x="20" y="112" width="300" height="26" rx="8" fill="#e9f4ff"></rect>
-
               <rect x="20" y="40" width="320" height="26" rx="8" fill="#0b3a66"></rect>
               <rect x="20" y="76" width="260" height="26" rx="8" fill="#0f77c3"></rect>
               <rect x="20" y="112" width="220" height="26" rx="8" fill="#6aa6e9"></rect>
-
               <text x="480" y="58" font-size="13" fill="#0b2135">Prevención</text>
               <text x="480" y="94" font-size="13" fill="#0b2135">Diagnóstico</text>
               <text x="480" y="130" font-size="13" fill="#0b2135">Tratamiento / Continuidad</text>
             </svg>
           </div>
-          <p class="footnote">Gráfico creado para apoyo visual. No representa datos numéricos oficiales.</p>
         </section>
 
-        <!-- Tabla compacta -->
         <section class="card" style="margin-top:16px;">
           <h3 style="margin-top:0;color:var(--navy)">Servicios garantizados (ejemplos)</h3>
           <table>
@@ -177,23 +163,19 @@
           </table>
         </section>
 
-        <!-- FAQ -->
         <section class="card faq" style="margin-top:16px;">
           <h3 style="margin-top:0;color:var(--navy)">Preguntas frecuentes</h3>
-
           <div class="q" onclick="toggleFaq(this)"><span>¿A quiénes protege la ley?</span><span>▾</span></div>
-          <div class="a">La ley abarca a personas afectadas y expuestas al VIH, hepatitis virales, otras ITS y TBC, garantizando cobertura por parte del sistema de salud y prestadores. Para definiciones puntuales ver artículos del texto legal. 6</div>
+          <div class="a">La ley abarca a personas afectadas y expuestas al VIH, hepatitis virales, ITS y TBC, garantizando cobertura por parte del sistema de salud y prestadores.</div>
 
           <div class="q" onclick="toggleFaq(this)"><span>¿Dónde puedo leer el texto completo?</span><span>▾</span></div>
-          <div class="a">El texto completo está disponible en el PDF oficial y en la página de normativa del Estado. (Enlaces arriba). 7</div>
+          <div class="a">El texto completo está disponible en el PDF oficial y en la página de normativa del Estado.</div>
 
           <div class="q" onclick="toggleFaq(this)"><span>¿La ley obliga a testear a la población?</span><span>▾</span></div>
-          <div class="a">La ley fomenta y garantiza acceso a pruebas según los criterios clínicos y de salud pública; para obligaciones específicas consultar los artículos del texto. 8</div>
+          <div class="a">La ley promueve el acceso voluntario y confidencial a pruebas, conforme a criterios de salud pública y derechos individuales.</div>
         </section>
-
       </main>
 
-      <!-- ASIDE / PANEL DERECHO -->
       <aside>
         <div class="card">
           <div style="display:flex;justify-content:space-between;align-items:center">
@@ -208,46 +190,35 @@
           <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
             <a class="btn btn-outline" href="https://e-legis-ar.msal.gov.ar/legisalud/migration/pdf/ley27675.pdf" target="_blank" rel="noopener">📥 Descargar PDF oficial</a>
             <a class="btn btn-outline" href="https://www.argentina.gob.ar/normativa/nacional/ley-27675-368130" target="_blank" rel="noopener">🔎 Norma en sitio oficial</a>
-            <a class="btn btn-outline" href="https://www.boletinoficial.gob.ar/detalleAviso/primera/266657/20220718" target="_blank" rel="noopener">📰 Boletín Oficial (publicación)</a>
+            <a class="btn btn-outline" href="https://www.boletinoficial.gob.ar/detalleAviso/primera/266657/20220718" target="_blank" rel="noopener">📰 Boletín Oficial</a>
           </div>
 
           <h4 style="margin-top:14px;color:var(--navy)">Cronología</h4>
           <ul class="timeline" aria-hidden="true">
-            <li><strong>30/06/2022</strong> — Sanción de la Ley N° 27.675. 9</li>
-            <li><strong>13/07/2022</strong> — Promulgación (Decreto N° 400/2022). 10</li>
-            <li><strong>18/07/2022</strong> — Publicación en Boletín Oficial. 11</li>
-            <li><strong>01/12/2022</strong> — Aprobación de reglamentación parcial (ver Boletín Oficial). 12</li>
+            <li><strong>30/06/2022</strong> — Sanción de la Ley N° 27.675</li>
+            <li><strong>13/07/2022</strong> — Promulgación (Decreto N° 400/2022)</li>
+            <li><strong>18/07/2022</strong> — Publicación en Boletín Oficial</li>
+            <li><strong>01/12/2022</strong> — Aprobación de reglamentación parcial</li>
           </ul>
-
-          <h4 style="margin-top:14px;color:var(--navy)">Imágenes recomendadas</h4>
-          <p style="color:var(--muted);font-size:13px;margin-top:6px">
-            - Logo del Ministerio de Salud (si se usa en contexto institucional).<br>
-            - Ilustraciones tipo pictograma para Prevención / Diagnóstico / Tratamiento (unDraw).<br>
-            - Fotos de centros de salud o campañas (Unsplash, Pexels).
-          </p>
-          <p style="margin-top:10px;font-size:13px;color:var(--muted)"><strong>Nota:</strong> Si vas a usar logos oficiales revisá permisos/atribuciones institucionales.</p>
         </div>
       </aside>
     </div>
 
     <footer>
-      <div>Creado para proyecto escolar — Plantilla informativa sobre Ley N° 27.675</div>
-      <div class="footnote">Fuentes: Sitio de normativa del Estado argentino; Boletín Oficial; PDF oficial de la ley. Enlaces incluidos arriba. 13</div>
+      <div>Creado para proyecto escolar — Ley Nacional N° 27.675</div>
+      <div class="footnote">Fuentes: Ministerio de Salud de la Nación, Boletín Oficial y e-Legis Salud Argentina.</div>
     </footer>
   </div>
 
 <script>
-  // FAQ accordion simple
   function toggleFaq(el){
     el.classList.toggle('open');
-    const next = el.nextElementSibling;
-    if(next) next.style.display = next.style.display === 'block' ? 'none' : 'block';
+    const next=el.nextElementSibling;
+    if(next) next.style.display=next.style.display==='block'?'none':'block';
   }
-
-  // Mejor experiencia: permitir abrir el primer FAQ
-  document.addEventListener('DOMContentLoaded', ()=> {
-    const firstQ = document.querySelector('.faq .q');
-    if(firstQ) { firstQ.classList.add('open'); const a = firstQ.nextElementSibling; if(a) a.style.display = 'block'; }
+  document.addEventListener('DOMContentLoaded',()=>{
+    const firstQ=document.querySelector('.faq .q');
+    if(firstQ){firstQ.classList.add('open');const a=firstQ.nextElementSibling;if(a)a.style.display='block';}
   });
 </script>
 </body>
